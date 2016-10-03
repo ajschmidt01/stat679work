@@ -16,7 +16,7 @@ Data
 In order to preserve the original files, I copied the original data into this folder.
 The files were most recently copied over on September 29, 2016.
 The data were copied using the following command (while pwd is the data folder):
- `cp -r ~/Documents/stat679/hw1/coursedata/hw1-snaqTimeTests .``
+ `cp -r ~/Documents/stat679/hw1/coursedata/hw1-snaqTimeTests .`
 
 The original files are found in ~/Documents/stat679/hw1/coursedata/hw1-snaqTimeTests
 They were copied there from Github using the following command in the first two weeks of September, 2016:
@@ -36,6 +36,7 @@ This script was most recently run on September 29, 2016.
 **2.**
 **summarizeSNaQres.sh** pulls the following info from the log and out files and places it in a csv file (snaqResSummary):
 (This csv file was last updated on September 29, 2016.)
+
   1."analysis"-the analysis name (column 1)
   2. "h"-the number of hybridizations allowed during analysis (column 2)
   3. "CPUtime"-total CPU/elapsed time for analysis in *seconds* (column 3)
@@ -47,6 +48,7 @@ This script was most recently run on September 29, 2016.
 Results
 -------
 **snaqResSummary.csv** contains the output from summarizeSNaQres.sh. Specifically, it contains:
+
   1."analysis"-the analysis name (column 1)
   2. "h"-the number of hybridizations allowed during analysis (column 2)
   3. "CPUtime"-total CPU/elapsed time for analysis in *seconds* (column 3)
