@@ -2,12 +2,12 @@ Results
 -------
 **snaqResSummary.csv** contains the output from summarizeSNaQres.sh. Specifically, it contains:
 
-  1. "analysis"-the analysis name
-  2. "h"-the number of hybridizations allowed during analysis
-  3. "CPUtime"-total CPU/elapsed time for analysis in *seconds*
-  4. "number of runs" (Nruns),
-  5. "Nfail" (max number of failed proposals
-  6. "fabs" (tolerated difference in the absolute value of the score function, to stop the search),
+  1. "analysis" (the analysis name)
+  2. "h" (the number of hybridizations allowed during analysis)
+  3. "CPUtime" (total CPU/elapsed time for analysis in *seconds*)
+  4. "number of runs" (Nruns)
+  5. "Nfail" (max number of failed proposals)
+  6. "fabs" (tolerated difference in the absolute value of the score function, to stop the search)
   7. "frel" (ftolRel)
   8. "xabs" (xtolAbs)
   9. "xrel" (xtolRel)
