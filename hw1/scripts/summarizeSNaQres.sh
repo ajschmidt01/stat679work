@@ -30,7 +30,7 @@ if [ $curDir != hw1 ]
     exit 1 # exit script with error code (1). 0 = successful exit
   fi
 
-#Create output csv file with three columns (analysis, h and CPUtime)
+#Create output csv file with 13 variable columns
   #First check if the file already exists
   csvFile=$(basename $(ls ${wd}/results/snaqResSummary.csv))
   if [ $csvFile=snaqResSummary.csv ]
