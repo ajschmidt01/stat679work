@@ -51,43 +51,43 @@ if [ $curDir != hw1 ]
 
   for filename in *
     do
-      #pull analysis name and save (first check)
+      #pull analysis name and save
         #Pulls letters prior to "." in file name
         analysis=$(echo $filename | grep -oE "^\w+")
 
-      #pull number of hybridizations and save (first check)
+      #pull number of hybridizations and save
         #Restrict to "hmax" lines, takes the first, and reports the number
         h=$(grep "hmax" $filename | head -n 1 | grep -oE "\d+")
 
-      #pull CPUtime and save (first check)
+      #pull CPUtime and save
         #Finds line with "Elapsed" and reports "number.number"
         CPUtime=$(grep "Elapsed" ${wd}/data/hw1-snaqTimeTests/out/${analysis}.out | grep -oE "\d+\.\d+")
 
-      #pull Nruns name and save (first check)
+      #pull Nruns and save
         #Pulls number after "BEGIN:" at beginning of line
         Nruns=$(gsed -nE 's/^BEGIN:\s([0-9]+).*/\1/p ' $filename)
 
-      #pull Nfail name and save (first check)
+      #pull Nfail and save
         #Pulls numbers after "...proposals = "
         Nfail=$(gsed -nE 's/.*proposals[^\s]=\s([0-9]+).*/\1/p' $filename)
 
-      #pull fabs name and save (first check)
+      #pull fabs and save
         #Pulls sequence of numbers, letters, . (e.g., 1.0e-5) after "ftolAbs="
         fabs=$(gsed -nE 's/.*ftolAbs=([0-9 a-z \. \-]+),.*/\1/p' $filename)
 
-      #pull frel name and save (first check)
+      #pull frel and save
         #Pulls sequence of numbers, letters, . (e.g., 1.0e-5) after "ftolRel="
         frel=$(gsed -nE 's/.*ftolRel=([0-9 a-z \. \-]+),.*/\1/p' $filename)
 
-      #pull xabs name and save (first check)
+      #pull xabs and save
         #Pulls sequence of numbers, letters, . (e.g., 1.0e-5) after "xtolAbs="
         xabs=$(gsed -nE 's/.*xtolAbs=([0-9 a-z \. \-]+),.*/\1/p' $filename)
 
-      #pull xrel name and save (first check)
+      #pull xrel and save
         #Pulls sequence of numbers, letters, . (e.g., 1.0e-5) after "xtolRel="
         xrel=$(gsed -nE 's/.*xtolRel=([0-9 a-z \. \-]+)..*/\1/p' $filename)
 
-      #pull seed name and save (first check)
+      #pull seed and save
         #Pulls numbers after "main seed"
         seed=$(gsed -nE 's/main[^\s]seed[^\s]([0-9]+).*/\1/p' $filename)
 
@@ -95,15 +95,15 @@ if [ $curDir != hw1 ]
         #Pulls numbers after "loglik=", removes decimals, then deletes lines with values greater than or equal to 3500
         under3500=$(gsed -nE 's/.*loglik=([0-9 \.]+).*/\1/p' $filename | gsed -E 's/\.[0-9]*//' | gsed -E '/[0-9]{5,}/d' | gsed -E '/[4-9][0-9]{3,}/d' | gsed -E '/3[5-9][0-9]{2,}/d' | column -t)
 
-      #pull under3460 name and save (first check)
+      #pull under3460 and save
         #Inputs numbers under 3500, places on separate lines, removes blank lines, and deletes numbers greater than 3460
         under3460=$(echo $under3500 | gsed -E 's/\s/\n/g' | gsed -E '/^$/d' | gsed -E '/34[6-9][0-9]/d' | wc -l | column -t)
 
-      #pull under3450 name and save (first check)
+      #pull under3450 and save
         #Inputs numbers under 3500, places on separate lines, removes blank lines, and deletes numbers greater than 3450
         under3450=$(echo $under3500 | gsed -E 's/\s/\n/g' | gsed -E '/^$/d' | gsed -E '/34[5-9][0-9]/d' | wc -l | column -t)
 
-      #pull under3440 name and save (first check)
+      #pull under3440 and save
         #Inputs numbers under 3500, places on separate lines, removes blank lines, and deletes numbers greater than 3440
         under3440=$(echo $under3500 | gsed -E 's/\s/\n/g' | gsed -E '/^$/d' | gsed -E '/34[4-9][0-9]/d' | wc -l | column -t)
 
