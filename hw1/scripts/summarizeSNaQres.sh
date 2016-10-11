@@ -45,8 +45,8 @@ if [ $curDir != hw1 ]
 
 #Loop over all files in the log/out directories
   #To do so, move into the log directory to first grab the file/analysis names
-  #and then loop over them, grabbing/saving analysis name, number of
-  #hybridizations, and CPUtime, and then appending to the csv file
+  #and then loop over them, grabbing/saving 13 variable data then appending to
+  #the csv file
   cd ${wd}/data/hw1-snaqTimeTests/log/
 
   for filename in *
