@@ -7,6 +7,6 @@ Results
   3. Water temperature (F)
   4. Energy reading (KWh)
 
-Note that the first row of the csv file is a header with a title, and the second row is a header with column names.
+Note that the first row of the csv file is a header with variable names.
 
 This csv file was last updated on November 17, 2016.
