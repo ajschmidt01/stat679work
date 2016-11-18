@@ -128,12 +128,13 @@ def merge(temp, energy, stdout=True, append=False):
                 else:
                     out.write(line + ', "Energy (KWh)"' + "\n")  #Write variable names to header, add comma and variable name for Energy column, new line
                     continue                    #skip back to beginning of loop
-            elif not first_char.isdigit():  #if first character is not a digit, and not quotation, then it is the header
-                if append == True: #don't add header if appending
-                    continue
-                else:
-                    out.write(line + "\n")      #print the header to the file, new line
-                    continue                    #skip back to beginning of loop
+            elif not first_char.isdigit():  #if first character is not a digit, and not quotation, then it is the title header. Don't print.
+                continue
+                #if append == True: #don't add header if appending
+                #    continue
+                #else:
+                #    out.write(line + "\n")      #print the header to the file, new line
+                #    continue                    #skip back to beginning of loop
             else:                           #if not first or second line (header or variable names), then...
                 water_data = line.split(',')      #create list called data, of each column (date=column #1)
                 currentWaterDay = datetime.strptime(water_data[1], '%m/%d/%y %I:%M:%S %p')
